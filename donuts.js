@@ -11,7 +11,7 @@ function mainLoop() {
     ctx.font = "30px Arial";
     ctx.fillText("Score: " + score, 10, 30);
 
-    for (let n = 0; n < 3; n++) {
+    for (let n = 0; n < x.length; n++) {
         ctx.drawImage(donut, x[n],y[n],80,80);
         y[n] += speed[n];
         checkForHits(n);
@@ -31,6 +31,7 @@ function keyReleased(e) {
     let k = e.keyCode;
     if (k == 37) (changeX = 0)
     if (k == 39) (changeX = 0)
+    if (k == 78) (x.push(300), y.push(0), speed.push(4))
 }
 
 document.onkeydown = keyPressed;
