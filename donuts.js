@@ -23,7 +23,7 @@ function mainLoop() {
     ctx.drawImage(dog, dogX,400,80,80);
     dogX += changeX;
 }
-
+z
 document.onkeydown = keyPressed;
 function keyPressed(e) {
     let k = e.keyCode;
