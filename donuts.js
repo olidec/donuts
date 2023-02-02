@@ -3,6 +3,7 @@ let x = [100,300,500];
 let y = [0,0,0];
 let speed = [1,4,2];
 let dogX = 0; changeX = 0; score = 0;
+let donutAmount = 3;
 
 let gameTimer = setInterval(mainLoop,20);
 
@@ -13,7 +14,7 @@ function mainLoop() {
     ctx.font = "30px Arial";
    
 
-    for (let n = 0; n < 3; n++) {
+    for (let n = 0; n < donutAmount; n++) {
         ctx.drawImage(donut, x[n],y[n],80,80);
         y[n] += speed[n];
         checkForHits(n);
@@ -36,8 +37,14 @@ function mainLoop() {
 document.onkeydown = keyPressed;
 function keyPressed(e) {
     let k = e.keyCode;
-    if (k == 37) {changeX = -5;}
-    if (k == 39) {changeX = 5;}
+    if(k == 13) {
+        donutAmount++
+        x.push(325);
+        y.push(0);
+        speed.push(3);
+    }
+    if (k == 37) {changeX = -50;}
+    if (k == 39) {changeX = 50;}
 }
 
 document.onkeyup = keyLifted;
@@ -63,4 +70,13 @@ function gameOver() {
     clearInterval(gameTimer);
     ctx.font = "80px Arial";
     ctx.fillText("Game Over!",100,250);
+}
+
+let SpawnTimer = setInterval(SpawnStuff,1000);
+
+function SpawnStuff(){
+    donutAmount++
+    x.push(Math.random()*600);
+    y.push(0);
+    speed.push(Math.random()*3);
 }
