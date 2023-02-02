@@ -1,7 +1,7 @@
 let ctx = gameCanvas.getContext("2d");
 let x = [100,300,500];
 let y = [0,0,0];
-let speed = [6,9,1];
+let speed = [12,9,99];
 let dogX = 0; changeX = 0; score = 0;
 
 let gameTimer = setInterval(mainLoop,20);
