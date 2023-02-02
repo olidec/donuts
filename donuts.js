@@ -1,11 +1,11 @@
 let ctx = gameCanvas.getContext("2d");
 let x = [100,300,500];
 let y = [0,0,0];
-let speed = [2,1,3];
+let speed = [5,4,3];
 let dogX = 0; changeX = 0; score = 0;
 
 let gameTimer = setInterval(mainLoop,20);
-
+let misses = 0
 function mainLoop() {
     ctx.clearRect(0,0,640,480);
     ctx.font = "30px Arial";
@@ -18,17 +18,26 @@ function mainLoop() {
         if (y[n] > 480) {
             y[n] = -80;
             x[n] = Math.random()*600;
+            misses++;
+            if (misses > 5) {gameOver()};
         }
     }
     ctx.drawImage(dog, dogX,400,80,80);
     dogX += changeX;
 }
 
+document.onkeyup = keyReleased
+function keyReleased(e) {
+    let k = e.keyCode;
+    if (k == 37) (changeX = 0)
+    if (k == 39) (changeX = 0)
+}
+
 document.onkeydown = keyPressed;
 function keyPressed(e) {
     let k = e.keyCode;
-    if (k == 37) {changeX = -10;}
-    if (k == 39) {changeX = 10;}
+    if (k == 37) {changeX = -5;}
+    if (k == 39) {changeX = 5;}
 }
 
 function checkForHits(n) {
@@ -40,9 +49,10 @@ function checkForHits(n) {
     }
 }
 
+
 setTimeout(gameOver,60000);
 function gameOver() {
     clearInterval(gameTimer);
     ctx.font = "80px Arial";
     ctx.fillText("Game Over!",100,250);
-}
+} 
