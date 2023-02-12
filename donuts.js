@@ -29,6 +29,11 @@ function keyPressed(e) {
     let k = e.keyCode;
     if (k == 37) {changeX = -30;}
     if (k == 39) {changeX = 30;}
+    if (k == 65) { 
+        x.push(Math.random() * 600);
+        y.push(-80);
+        speed.push(Math.random() * 12 + 4);
+}
 }
 
 function checkForHits(n) {
