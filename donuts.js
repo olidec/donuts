@@ -27,8 +27,8 @@ function mainLoop() {
 document.onkeydown = keyPressed;
 function keyPressed(e) {
     let k = e.keyCode;
-    if (k == 37) {changeX = -10;}
-    if (k == 39) {changeX = 10;}
+    if (k == 37) {changeX = -20;}
+    if (k == 39) {changeX = 20;}
 }
 
 function checkForHits(n) {
