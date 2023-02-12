@@ -9,6 +9,7 @@ let gameTimer = setInterval(mainLoop,20);
 
 
 
+
 function mainLoop() {
     ctx.clearRect(0,0,640,480);
     ctx.font = "30px Arial";
@@ -72,7 +73,7 @@ function gameOver() {
     ctx.fillText("Game Over!",100,250);
 }
 
-let SpawnTimer = setInterval(SpawnStuff,1000);
+let SpawnTimer = setInterval(SpawnStuff,2000);
 
 function SpawnStuff(){
     donutAmount++
