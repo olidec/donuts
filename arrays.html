@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Questions</h1>
+    <div>
+        <ol>
+            <li>5</li>
+            <li>[2, 4, 6, 8, 11, 'hello']</li>
+            <li>[2, 4, 6, 8]</li>
+            <li>2 ** 4 ** 6 ** 8 ** 11</li>
+            <li>24811</li>
+            <li>[4, 6]</li>
+        </ol>
+    </div>
+    <div>
+        <ul id="mylist">
+
+        </ul>
+    </div>
+    <script>
+        let a = [2,4,6,8,11]
+
+        let text = ''
+        a.forEach((entry) => {
+            text += `<li> s{ entry } </li>`
+
+        })
+
+        document.getElementById('mylist').innerHTML = text
+    </script>
+</body>
+</html>
