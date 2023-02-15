@@ -1,7 +1,7 @@
 let ctx = gameCanvas.getContext("2d");
 let x = [100,300,500];
 let y = [0,0,0];
-let speed = [12,9,99];
+let speed = [66,77,99];
 let dogX = 0; changeX = 0; score = 0;
 
 let gameTimer = setInterval(mainLoop,20);
@@ -27,8 +27,8 @@ function mainLoop() {
 document.onkeydown = keyPressed;
 function keyPressed(e) {
     let k = e.keyCode;
-    if (k == 37) {changeX = -5;}
-    if (k == 39) {changeX = 1;}
+    if (k == 37) {changeX = -20;}
+    if (k == 39) {changeX = 20;}
 }
 
 function checkForHits(n) {
