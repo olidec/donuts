@@ -7,6 +7,14 @@ let donutAmount = 3;
 
 let gameTimer = setInterval(mainLoop,20);
 
+let Donut = function(x, y, speed){
+    this.x = x;
+    this.y = y;
+    this.speed = speed;
+}
+
+let donuts = [new Donut(100, 0 ,1), new Donut(300, 0 ,4), new Donut(500, 0, 2)];
+
 
 
 
