@@ -27,13 +27,13 @@ function mainLoop() {
 document.onkeydown = keyPressed;
 function keyPressed(e) {
     let k = e.keyCode;
-    if (k == 37) {changeX = -30;}
-    if (k == 39) {changeX = 30;}
+    if (k == 37) {changeX = -90;}
+    if (k == 39) {changeX = 90;}
     if (k == 65) { 
-        x.push(Math.random() * 600);
-        y.push(-80);
-        speed.push(Math.random() * 12 + 4);
-}
+        x.push(Math.random()*600);
+        y.push(0);
+        speed.push(Math.random()*2+1);
+        }
 }
 
 function checkForHits(n) {
@@ -45,9 +45,9 @@ function checkForHits(n) {
     }
 }
 
-setTimeout(gameOver,60000);
+setTimeout(gameOver,6000);
 function gameOver() {
     clearInterval(gameTimer);
-    ctx.font = "80px Arial";
-    ctx.fillText("Game Over!",100,250);
+    ctx.font = "120px Arial";
+    ctx.fillText("u lost!",100,250);
 }

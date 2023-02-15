@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Arrays in JavaScript</title>
+</head>
+<body>
+  <h1>Arrays in JavaScript</h1>
+
+  <h2>Question (a) What is the result of a.length?</h2>
+  <p>The result of a.length is 5.</p>
+
+  <h2>Question (b) What are the entries of a after the command a.push('hello')?</h2>
+  <p>The entries of a after the command a.push('hello') are [2, 4, 6, 8, 11, 'hello'].</p>
+
+  <h2>Question (c) What are the entries of a after the command a.pop()?</h2>
+  <p>The entries of a after the command a.pop() are [2, 4, 6, 8, 11].</p>
+
+  <h2>Question (d) What is the output of a.join(' ** ') ?</h2>
+  <p>The output of a.join(' ** ') is "2 ** 4 ** 6 ** 8 ** 11".</p>
+
+  <h2>Question (e) What is the output of a.join()?</h2>
+  <p>The output of a.join() is "2,4,6,8,11".</p>
+
+  <h2>Question (f) What is the output of a.slice(1,3)?</h2>
+  <p>The output of a.slice(1,3) is [4, 6].</p>
+
+  <h2>Question (g) Use the forEach() method to write all the of the array entries into an
+unordered list.</h2>
+  <ul id="entries"></ul>
+
+  <script>
+    let a = [2, 4, 6, 8, 11];
+
+    let entries = document.getElementById("entries");
+    a.forEach(function(entry) {
+      let item = document.createElement("li");
+      item.innerHTML = entry;
+      entries.appendChild(item);
+    });
+  </script>
+</body>
+</html>
