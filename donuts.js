@@ -1,7 +1,7 @@
 let ctx = gameCanvas.getContext("2d");
 let x = [100,300,500];
 let y = [0,0,0];
-let speed = [2,1,3];
+let speed = [4,8,6];
 let dogX = 0; changeX = 0; score = 0;
 
 let gameTimer = setInterval(mainLoop,20);
@@ -12,7 +12,7 @@ function mainLoop() {
     ctx.fillText("Score: " + score, 10, 30);
 
     for (let n = 0; n < 3; n++) {
-        ctx.drawImage(donut, x[n],y[n],80,80);
+        ctx.drawImage(donut, x[n],y[n],50,50);
         y[n] += speed[n];
         checkForHits(n);
         if (y[n] > 480) {
@@ -27,8 +27,13 @@ function mainLoop() {
 document.onkeydown = keyPressed;
 function keyPressed(e) {
     let k = e.keyCode;
-    if (k == 37) {changeX = -10;}
-    if (k == 39) {changeX = 10;}
+    if (k == 37) {changeX = -90;}
+    if (k == 39) {changeX = 90;}
+    if (k == 65) { 
+        x.push(Math.random()*600);
+        y.push(0);
+        speed.push(Math.random()*2+1);
+        }
 }
 
 function checkForHits(n) {
@@ -40,9 +45,9 @@ function checkForHits(n) {
     }
 }
 
-setTimeout(gameOver,60000);
+setTimeout(gameOver,6000);
 function gameOver() {
     clearInterval(gameTimer);
-    ctx.font = "80px Arial";
-    ctx.fillText("Game Over!",100,250);
+    ctx.font = "120px Arial";
+    ctx.fillText("u lost!",100,250);
 }
