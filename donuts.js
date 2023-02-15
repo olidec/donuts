@@ -12,7 +12,7 @@ function mainLoop() {
     ctx.fillText("Score: " + score, 10, 30);
 
     for (let n = 0; n < 3; n++) {
-        ctx.drawImage(donut, x[n],y[n],80,80);
+        ctx.drawImage(donut, x[n],y[n],50,50);
         y[n] += speed[n];
         checkForHits(n);
         if (y[n] > 480) {
